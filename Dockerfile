@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN gradle clean build -x test
 
-FROM openjdk:21-jdk
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY --from=build /app/build/libs/discografia-1.jar app.jar
 EXPOSE 8080
